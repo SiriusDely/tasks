@@ -19,35 +19,12 @@ function(template, AddListView, EditListView) {
     },
 
     initialize: function() {
-      
     },
 
     render: function() {
       this.$el.html(this.template());
       return this;
     },
-    /*
-    addList: function() {
-      var list = new bTask.collections.lists.model({ title: '' })
-        , form = new AddListView({ model: list })
-        , self = this
-        ;
-
-      this.$el.find('#list-editor').html(form.render().el);
-      form.$el.find('input:first').focus();
-
-      return false;
-    },
-
-    editList: function() {
-      var form = new EditListView({ model: bTask.models.activeList });
-
-      this.$el.find('#list-editor').html(form.render().el);
-      form.$el.find('input:first').focus();
-
-      return false;
-    }
-    */
 
     listForm: function(form) {
       this.$el.find('#list-editor').html(form.render().el).show();
@@ -70,7 +47,6 @@ function(template, AddListView, EditListView) {
       }
       return false;
     }
-
   });
 
   return AppView;

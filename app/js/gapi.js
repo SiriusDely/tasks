@@ -34,7 +34,7 @@ define(['config'], function(config) {
 
         app.views.auth.$el.hide();
         $('#signed-in-container').show();
-        self.trigger('ready'); // This one
+        self.trigger('ready');
       } else {
         if (authResult && authResult.error) {
           // TODO: Show error
@@ -81,13 +81,14 @@ define(['config'], function(config) {
     switch (model.url) {
       case 'tasks':
         requestContent.task = model.get('id');
+        requestContent.tasklist = model.get('tasklist');
       break;
 
       case 'tasklists':
         requestContent.tasklist = model.get('id');
       break;
     }
-    
+
     switch (method) {
       case 'create':
         requestContent['resource'] = model.toJSON();
@@ -108,11 +109,10 @@ define(['config'], function(config) {
       break;
 
       case 'read':
-        var request = gapi.client.tasks[model.url].list(options.data);
+        request = gapi.client.tasks[model.url].list(options.data);
         Backbone.gapiRequest(request, method, model, options);
       break;
     }
-
   };
 
   Backbone.gapiRequest = function(request, method, model, options) {
