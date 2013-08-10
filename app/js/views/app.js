@@ -15,6 +15,7 @@ function(template, AddListView, EditListView) {
     events: {
       'click #add-list-button': 'addList'
     , 'click #edit-list-button': 'editList'
+    , 'click #delete-list-button': 'deleteList'
     },
 
     initialize: function() {
@@ -61,8 +62,15 @@ function(template, AddListView, EditListView) {
 
     editList: function() {
       return this.listForm(new EditListView({ model: bTask.views.activeListMenuItem.model }));
+    },
+
+    deleteList: function() {
+      if (confirm('Are you sure you want to delete that list?')) {
+        bTask.views.activeListMenuItem.model.destroy();
+      }
+      return false;
     }
-    
+
   });
 
   return AppView;
