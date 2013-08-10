@@ -1,4 +1,5 @@
 define(['config'], function(config) {
+
   var app;
 
   function ApiManager() {
