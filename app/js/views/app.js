@@ -16,6 +16,14 @@ function(template, AddListView, EditListView) {
       'click #add-list-button': 'addList'
     , 'click #edit-list-button': 'editList'
     , 'click #delete-list-button': 'deleteList'
+    , 'click .clear-complete': 'clearComplete'
+    },
+
+    clearComplete: function() {
+      var list = bTask.views.activeListMenuItem.model;
+      bTask.collections.tasks.clear(list.get('id'), { success: function() {
+      }});
+      return false;
     },
 
     initialize: function() {
