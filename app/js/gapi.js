@@ -1,7 +1,7 @@
 define(['config'], function(config) {
   var app;
 
-  function ApiManager() {
+  function ApiManager(_app) {
     app = _app;
     this.loadGapi();
   }
