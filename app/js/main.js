@@ -5,10 +5,22 @@ requirejs.config({
   },
 
   shim: {
+    'lib/underscore-min': {
+      exports: '_'
+    },
+    'lib/backbone-min': {
+      deps: ['lib/underscore-min']
+    , exports: 'Backbone'
+    },
+    'app': {
+      deps: ['lib/underscore-min', 'lib/backbone-min']
+    }
   }
 });
 
-require(['app'],
+require([
+  'app'
+],
 
 function(App) {
   window.bTask = new App();
