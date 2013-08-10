@@ -23,6 +23,7 @@ function(ApiManager, AppView, AuthView, ListMenuView, TaskLists) {
   App.prototype = {
     views: {},
     collections: {},
+    models: {},
     connectGapi: function() {
       var self = this;
       this.apiManager = new ApiManager(this);
