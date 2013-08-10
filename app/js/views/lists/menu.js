@@ -18,7 +18,7 @@ define(['views/lists/menuitem'], function(ListMenuItemView) {
       if (!bTask.views.activeListMenuItem) {
         bTask.views.activeListMenuItem = item;
       }
-      
+
       if (model.get('id') === bTask.views.activeListMenuItem.model.get('id')) {
         item.open();
       }

@@ -28,14 +28,13 @@ gapi.client = {
       delete: function() {
         return {
           execute: function(cb) {
-            cb();
+            cb({});
           }
         };
       },
       insert: function() {
         return {
           execute: function(cb) {
-            // TODO: Running the callback causes addTask (app.js) to fail when running `self.collection.add(task, { at: 0 });`
           }
         };
       },
