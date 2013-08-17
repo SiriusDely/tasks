@@ -10,8 +10,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-exec');
 
   grunt.registerTask('copy-require', function() {
-    grunt.file.mkdir('build/js/lib');
-    grunt.file.copy('node_modules/requirejs/require.js', 'build/js/lib/require.js');
+    grunt.file.mkdir('dist/scripts/lib');
+    grunt.file.copy('node_modules/requirejs/require.js', 'dist/scripts/lib/require.js');
   });
 
   grunt.registerTask('default', ['copy-require']);

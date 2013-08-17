@@ -2,6 +2,6 @@
   appDir: 'app/'
 , baseUrl: 'js'
 , paths: {}
-, dir: 'build/'
+, dir: 'dist/'
 , modules: [{ name: 'main' }]
 })
